@@ -103,7 +103,7 @@ python tests/test_api.py
 Har request me `X-API-Key` header lagao:
 
 ```bash
-curl -X POST https://bge.artlabss.com/v1/embeddings \
+curl -X POST https://emb.quantumhash.me/v1/embeddings \
   -H "X-API-Key: qh-bge-yourkey123" \
   -H "Content-Type: application/json" \
   -d '{"texts": ["Hello world"], "is_query": false}'
@@ -121,7 +121,7 @@ headers = {"X-API-Key": "qh-bge-yourkey123"}
 
 # Documents embed karo
 response = client.post(
-    "https://bge.artlabss.com/v1/embeddings",
+    "https://emb.quantumhash.me/v1/embeddings",
     headers=headers,
     json={
         "texts": ["Your document text here"],
@@ -134,7 +134,7 @@ print(f"Embedding shape: {len(embeddings[0])}d")  # 1024
 
 # Queries embed karo (instruction auto add hoti hai)
 response = client.post(
-    "https://bge.artlabss.com/v1/embeddings",
+    "https://emb.quantumhash.me/v1/embeddings",
     headers=headers,
     json={
         "texts": ["What is machine learning?"],
@@ -182,7 +182,7 @@ import uuid
 # BGE API se embedding lo
 def get_embedding(text: str, is_query: bool = False) -> list:
     r = httpx.post(
-        "https://bge.artlabss.com/v1/embeddings",
+        "https://emb.quantumhash.me/v1/embeddings",
         headers={"X-API-Key": "your-key"},
         json={"texts": [text], "is_query": is_query}
     )
